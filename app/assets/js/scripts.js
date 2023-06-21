@@ -204,3 +204,17 @@ $(() => {
     $div.text(new Date().getTime() / 1000)
   })
 })
+
+let menuItems = document.querySelectorAll('.dropdown-menu li');
+
+// Проходим по каждому пункту меню и добавляем атрибут data-test
+
+
+menuItems.forEach(function(item, index) {
+  for (let i = 0; i < menuItems.length; i++) {
+    let menuItem = menuItems[i];
+    let text = menuItem.querySelector('a').innerText;
+    menuItem.setAttribute('data-test', 'menu-item-' + text);
+  }
+  item.setAttribute('data-test', 'menu-item-' + text )
+})
